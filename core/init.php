@@ -16,8 +16,7 @@ $GLOBALS['config'] = array(
 );
 
 function __autoload($class) {
-  $path = $DOCUMENT_ROOT . '/classes';
-  require_once $path . $class .'.php';
+  require_once 'classes/' . $class .'.php';
 }
 
-require_once 'function/sanitize.php';
+require_once 'functions/sanitize.php';
