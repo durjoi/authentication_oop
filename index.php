@@ -1,13 +1,12 @@
 <?php
 require_once 'core/init.php';
 
-$user = DB::getInstance();
-$users = $user->get("groups", array('id', '=', 9));
+$user = DB::getInstance()->get("groups", array('id', '=', 2));
 
-if($user->count()) {
-  echo "ok";
+if(!$user->count()) {
+  echo "NO Data";
 } else {
-  echo "No User";
+  echo $user->first()->name;
 }
 
 ?>

@@ -56,10 +56,11 @@ class DB {
          $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
 
          if(!$this->query($sql, array($value))->error()) {
-           return $this->_results;
+           return $this;
          }
        }
      }
+     return false;
   }
 
   public function get($table, $where = array()) {
@@ -68,6 +69,14 @@ class DB {
 
   public function delete($table, $where = array()) {
     return $this->action('DELETE', $table, $where);
+  }
+
+  public function results() {
+    return $this->_results;
+  }
+
+  public function first() {
+    return $this->results()[0];
   }
 
   public function error() {
