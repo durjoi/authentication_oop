@@ -1,9 +1,8 @@
 <?php
 require_once 'core/init.php';
 
-$user = DB::getInstance()->update('users', 1, array(
-  'password' => 'newpassword',
-));
+$user = DB::getInstance()->get('users', array('id', '=', '1'));
 
+print_r($user);
 
 ?>
