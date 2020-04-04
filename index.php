@@ -5,8 +5,8 @@ require_once 'core/init.php';
 //
 // print_r($user);
 
-if(Session::exists('success')) {
-  echo Session::flash('success');
+if(Session::exists('home')) {
+  echo Session::flash('home');
 }
 
 ?>

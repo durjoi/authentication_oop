@@ -40,8 +40,8 @@ if(Input::exists()) {
           'groups' => 1
         ));
 
-        Session::flash('success', 'You registered successfully!');
-        header('Location: index.php');
+        Session::flash('home', 'You registered successfully!');
+        Redirect::to('index.php');
       } catch(Exception $e)  {
         die($e->getMessage());
       }
