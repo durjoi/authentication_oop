@@ -1,7 +1,10 @@
 <?php
 class Hash {
   public static function make($string, $salt = '') {
-    return hash('sha256', $string, $salt);
+    $options = [
+      'cost' => 10,
+    ];
+    return password_hash($string, PASSWORD_BCRYPT, $options);
   }
 
   public static function salt($length) {
